@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.textContent = "Загрузка...";
         btn.style.pointerEvents = "none";
 
-        await downloadFileAsBlob(url, "CatWar_UwU.user.js");
+        await downloadFileAsBlob(url, "CWG-Bamboo.user.js");
 
         btn.textContent = "Успешно!";
       } catch (error) {
