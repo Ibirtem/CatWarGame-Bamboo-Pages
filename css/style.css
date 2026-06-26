@@ -1,0 +1,113 @@
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 16px;
+  --glass-radius: 12px;
+  --accent: #7eb8ff;
+  --error: #ff6b6b;
+  --warning: #ffa94d;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-primary);
+  background: #1a1a2e url("../assets/bg1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Base glass container */
+.glass-panel {
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--glass-radius);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Interactive elements */
+.glass-interactive {
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.glass-interactive:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.glass-interactive:active {
+  transform: scale(0.98);
+}
+
+/* States */
+.glass--error {
+  border-color: var(--error);
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.2);
+}
+
+.glass--warning {
+  border-color: var(--warning);
+}
+
+.container {
+  padding: 40px;
+  text-align: center;
+  max-width: 360px;
+  width: 90%;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 0 10px 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.title-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.description {
+  margin: 0 0 32px 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn {
+  display: block;
+  padding: 14px 20px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+}
+
+button.btn {
+  background-color: var(--glass-bg);
+}
